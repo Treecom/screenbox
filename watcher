@@ -1,0 +1,15 @@
+#!/bin/sh
+
+SERVICE='flashplayer';
+
+if ps ax | grep -v grep | grep $SERVICE > /dev/null
+then
+    echo "$SERVICE service running, everything is fine";
+else
+    echo "$SERVICE is not running! Starting process..";
+    sh /var/www/start_player;
+fi
+
+exit 0;
+
+

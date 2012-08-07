@@ -1,0 +1,31 @@
+<VirtualHost *:80>
+	ServerAdmin support@treecom.net
+	ServerName mediabox
+	DocumentRoot /var/www
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/>
+		AuthName "MediaBOX Login"
+		AuthType Basic
+		AuthUserFile /var/www/app/config/users
+		Require valid-user
+	
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride all
+		Order allow,deny
+		Allow from localhost mediabox
+		Satisfy any
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel error
+
+	#CustomLog ${APACHE_LOG_DIR}/access.log combined
+	CustomLog /dev/null combined
+
+</VirtualHost>

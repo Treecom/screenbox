@@ -1,0 +1,5 @@
+gksudo nvidia-settings
+nvidia-settings
+gnome-settings
+gksudo gnome-cotroll-center
+gksudo gnome-controll-center

@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    RewriteRule ^files/media/([0-9]+)/(.*) files/media/$2 [QSA,L]
+    RewriteRule ^streamer.mp3 streamer.php [QSA,L]
+    RewriteRule ^streamer.aac streamer.php [QSA,L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>

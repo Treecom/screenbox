@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sqlite /var/www/app/database.sqlite "delete from medias;"
+sqlite /var/www/app/database.sqlite "delete from media_playtimes;"
+
+rm -f /var/www/app/webroot/files/media/*

@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+xmodmap "/home/media/.Xmodmap"
+
+xset -dpms s off
+xset -b
+
+
+#gnome-settings-daemon &
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+
+unclutter -idle 0 -root -jitter 10 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+fbsetroot -solid black &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+/var/www/start_player &
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/media/.fluxbox/log"
+    

@@ -1,0 +1,5 @@
+# MEDIA BOX CRON
+
+*/1    *     *     *     *	media	sh /var/www/watcher >/dev/null
+*/1    *     *     *     *	media	curl -s http://mediabox/sync && curl -s http://mediabox/downloader  >/dev/null
+0      6     *     *     *	root	chmod +x /var/www/upgrade && sh /var/www/upgrade > /tmp/upgrade.log

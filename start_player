@@ -1,0 +1,36 @@
+#!/bin/sh
+
+WWW=/var/www;
+CONF=$WWW/app/config;
+APPTMP=$WWW/app/tmp;
+INTF=eth0;
+MAC=$APPTMP/mac
+
+# mac address file as app key
+rm $MAC;
+touch $MAC;
+chmod 644 $MAC;
+KEY=`/sbin/ifconfig $INTF | grep HWaddr | awk '{print $5}'`;
+if [ -z "$KEY" ]
+then
+    # if permision problem
+    KEY=`/sbin/ifconfig $INTF | grep MAC | awk '{print $4}'`;
+fi;
+echo "BOX MAC:$KEY";
+echo "$KEY" > $MAC;
+
+# solid black desktop bg
+fbsetroot -solid black;
+
+# if process run kill him
+if ps ax | grep -v grep | grep flashplayer > /dev/null
+then
+    killall -9 flashplayer;
+fi
+
+# run player
+export DISPLAY=:0.0 && /usr/bin/flashplayer $WWW/player.swf > /dev/null &
+
+exit 0;
+
+

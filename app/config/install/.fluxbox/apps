@@ -1,0 +1,13 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=smplayer) (class=Smplayer)
+  [Head]	{1}
+  [Dimensions]	{580 465}
+  [Position]	(UPPERLEFT)	{406 216}
+  [Deco]	{NONE}
+  [Maximized]	{no}
+  [Fullscreen]	{yes}
+  [Close]	{yes}
+[end]

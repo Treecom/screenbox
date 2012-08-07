@@ -1,0 +1,47 @@
+Screenbox - client flash player
+===============================
+
+
+REQUREMENTS
+===========
+
+- Adobe Flash Profesional CS5.5
+
+
+COMPILATION NOTE
+================
+
+- use GPU on export
+- targed vesion of Adobe Flash Player 10.3
+- require local network access
+
+RUN
+===
+
+- best result is on Adobe Flash Player 10.3 for good hardware GPU video accellertion
+- run in Adobe flash projector
+
+
+Source code
+===========
+
+- Source code is organized to MVCE (Model View Controller Events) architecture.
+
+- Folders:
+	- net.treecom - Screenbox flash player client classes
+	- com.adobe - Adobe AS3 utils
+	- courina.translations - Tweening motion classes (Will be used soon)
+
+
+BUGS
+====
+
+- find or add issues and bugs at https://github.com/Treecom/screenbox/issues
+
+
+LICENSE
+=======
+
+Be sure you are reading license LICENSE.txt or https://raw.github.com/Treecom/screenbox/master/LICENSE.txt
+
+Copyright (c) 2011-2012 Treecom s.r.o.
